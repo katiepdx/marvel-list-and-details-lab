@@ -1,5 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { getCharacters } from './services/characters-api'
 
-export default function App() {
-  return <h1>Hello World</h1>;
+export default class App extends Component {
+  async render() {
+    // api call - get all names
+    const characters = await getCharacters();
+    console.log(characters)
+    
+    return (
+      <>
+        <h1>All Characters</h1>
+      </>
+    )
+  }
 }
