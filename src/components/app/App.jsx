@@ -8,16 +8,18 @@ import {
 } from 'react-router-dom';
 
 import ListPage from './ListPage';
+import DetailPage from './DetailPage';
 
 
 export default function App() {
   return (
     <div>
-      Welcome! 
+      Welcome!!!!
       <Router>
         <nav>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/ListPage">All Characters</Link></li>
+          <li><Link to="/DetailPage">Details</Link></li>
         </nav>
         <Switch>
           <Route
@@ -25,6 +27,12 @@ export default function App() {
             path="/ListPage"
             exact
             render={(routerProps) => <ListPage {...routerProps}/>}
+          />
+          <Route
+            // Switch to the DetailPage
+            path="/DetailPage"
+            exact
+            render={(routerProps) => <DetailPage {...routerProps}/>}
           />
         </Switch>
       </Router>
