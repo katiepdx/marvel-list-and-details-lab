@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getCharacters } from './services/characters-api'
 import { Link } from 'react-router-dom'
+import './App.css'
 
 export default class ListPage extends Component {
   state = {
@@ -25,7 +26,7 @@ export default class ListPage extends Component {
     const mappedNames = allCharacterInfo.map(character => (
       // make each character a link
       <Link key={character._id} to={`/DetailPage/${character._id}`}>
-        <li key={character._id}>{character.name}</li>
+        <li className='list-links' key={character._id}>{character.name}</li>
       </Link>
     ))
 

@@ -22,9 +22,20 @@ export default class DetailPage extends Component {
 
     return (
       <div>
-        <h1>Character Details</h1>
-        <h3>This is {characterDetails.name}</h3>
-        <img src={characterDetails.image}/>
+        {
+          characterDetails.name 
+          ? 
+          <>
+            <h1>Character Details</h1>
+            <h3>This is {characterDetails.name}</h3>
+            <img src={characterDetails.image}/>
+          </>
+          :
+          <>
+            <h1>Please select a character</h1>
+          </>
+
+        }
       </div>
     )
   }

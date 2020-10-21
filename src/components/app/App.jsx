@@ -6,6 +6,7 @@ import {
   Switch,
   Link
 } from 'react-router-dom';
+import './App.css'
 
 import ListPage from './ListPage';
 import DetailPage from './DetailPage';
@@ -14,12 +15,11 @@ import DetailPage from './DetailPage';
 export default function App() {
   return (
     <div>
-      Welcome!!!!
       <Router>
-        <nav>
+        <nav className='nav-links'>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/ListPage">All Characters</Link></li>
-          <li><Link to="/DetailPage">Details</Link></li>
+          <li><Link to="/DetailPage/:characterId">Details</Link></li>
         </nav>
         <Switch>
           <Route
