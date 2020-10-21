@@ -35,8 +35,8 @@ export default class ListPage extends Component {
     // mapped characters 
     const mappedNames = allCharacterInfo.map(character => (
       // make each character a link
-      <Link to={`/DetailPage/${character._id}`}>
-        <li>{character.name}</li>
+      <Link key={character._id} to={`/DetailPage/${character._id}`}>
+        <li key={character._id}>{character.name}</li>
       </Link>
     ))
 

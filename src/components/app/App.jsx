@@ -29,8 +29,8 @@ export default function App() {
             render={(routerProps) => <ListPage {...routerProps}/>}
           />
           <Route
-            // Switch to the DetailPage
-            path="/DetailPage"
+            // Switch to the DetailPage for the id
+            path="/DetailPage/:characterId"
             exact
             render={(routerProps) => <DetailPage {...routerProps}/>}
           />

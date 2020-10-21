@@ -2,11 +2,15 @@ import React, { Component } from 'react'
 import { getCharacters } from './services/characters-api'
 
 export default class DetailPage extends Component {
+  componentDidMount = async () => {
+    const characterId = this.props.match.params;
+    console.log(characterId)
+  }
+
   render() {
-    const query = new URLSearchParams(this.props.location.search)
     return (
       <div>
-        Detail Page {query}
+        Detail Page
       </div>
     )
   }
