@@ -4,35 +4,24 @@ import { Link } from 'react-router-dom'
 
 export default class ListPage extends Component {
   state = {
-    allCharacterInfo: [],
-    allNames: []
+    allCharacterInfo: []
   }
   
   async componentDidMount() {
     // fetch character data on mount 
     const characters = await getCharacters();
-
-    // map character details and grab the names
-    const characterNames = characters.map(character => { 
-      return character.name;
-    })
   
-    // set characterDetails and characterNames to state
+    // set characterDetails to state
     this.setState({
-      allCharacterInfo: characters, 
-      allNames: characterNames 
+      allCharacterInfo: characters
     })
-
-    //Check data is in state
-    console.log('NAMES IN STATE', this.state.allNames)
-    console.log('DETAILS IN STATE', this.state.allCharacterInfo)
   }
 
    render() {
     //  deconstruct state
-    const { allCharacterInfo, allNames } = this.state;
+    const { allCharacterInfo } = this.state;
 
-    // mapped characters 
+    // mapped character names with Links
     const mappedNames = allCharacterInfo.map(character => (
       // make each character a link
       <Link key={character._id} to={`/DetailPage/${character._id}`}>
