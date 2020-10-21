@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getCharacters } from './services/characters-api'
+import { Link } from 'react-router-dom'
 
 export default class ListPage extends Component {
   state = {
@@ -33,20 +34,17 @@ export default class ListPage extends Component {
 
     // mapped characters 
     const mappedNames = allCharacterInfo.map(character => (
-      <div>
-        <li key={character._id}>
-          <a href={character.image}>{character.name}</a>
-        </li>
-      </div>
+      // make each character a link
+      <Link to={`/DetailPage/${character._id}`}>
+        <li>{character.name}</li>
+      </Link>
     ))
 
     return (
       <>
         <h1>All Characters</h1>
-        <section>
-          Hey Arnold Characters!
-          <ul>{mappedNames}</ul>
-        </section>
+        Hey Arnold Characters!
+        <ul>{mappedNames}</ul>
       </>
     )
   }
